@@ -1,129 +1,51 @@
-const path = require('path');
-require('dotenv').config()
-console.log(process.env)
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
-/*
-module.exports = {
-   entry: './src/index.js',
-   //entry: ['@babel/polyfill', './src/index.js'],
-   output: {
-      path: path.resolve(__dirname, '/bundle/'),
-      publicPath: '/',
-      filename: '[name].js',
-   },
-   resolve : {
-    extensions: ['.js', '.jsx', '.ts', '.tsx'],
-    },
-   devServer: {
-      port: 8001
-   },
-   module: {
-      rules: [
-         {
-            test: /\.jsx?$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader',
-            options: {
-                presets: ['@babel/preset-env']
-            }
-         },
-            {
-                test: /\.css$/i,
-                use: ["style-loader", "css-loader"],
-            },
-            {
-                test: /\.svg$/,
-                use: {
-                    loader: 'svg-url-loader',
-                    options: {
-                        encoding: 'base64'
-                    }
-                }
-            }
-
-
-      ]
-   },
-   plugins:[
-      new HtmlWebpackPlugin({
-         hash: true,
-        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-         template: './public/index.html'
-      }),
-      new CopyWebpackPlugin({
-        patterns: [
-          { from: "public/manifest.json", to: "manifest.json" }
-        ],
-      }),
-  
-   ]
-
-}
-
-*/
-
-//var path = require('path');
-//var HtmlWebpackPlugin = require('html-webpack-plugin');
-console.log(process.env.NODE_ENV)
-console.log(__dirname)
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
-   mode: 'development',
-  entry: './src/index.js',
+  entry: `${__dirname}/src/index.tsx`,
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: `${__dirname}/dist`,
+    publicPath: '/cryptonewsx/build/',
     filename: 'bundle.js',
-    clean: true,
-    publicPath: "/"
-
-  
-  
   },
+
+  // generate different source maps for dev and production
+  devtool: process.argv.indexOf('-p') === -1 ? 'eval-source-map' : 'source-map',
+
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js'],
+  },
+
   module: {
     rules: [
-      { test: /\.(js)$/, use: 'babel-loader' },
-      {
-         test: /\.css$/i,
-         use: ["style-loader", "css-loader"],
-      },
-      {
-         test: /\.svg$/,
-         use: {
-             loader: 'svg-url-loader',
-             options: {
-                 encoding: 'base64'
-             }
-         }
-     }
-            
-            
-
-      
-    ]
+      // use ts-loader for ts and js files so all files are converted to es5
+      { test: /\.(tsx?|js)$/, exclude: /node_modules/, loader: 'ts-loader' },
+      { test: /\.js$/, loader: 'source-map-loader' },
+    ],
   },
+
+  // required because the defaults for webpack -p don't remove multiline comments
+  optimization:
+    process.argv.indexOf('-p') === -1
+      ? {}
+      : {
+          minimize: true,
+          minimizer: [
+            new TerserPlugin({
+              terserOptions: {
+                output: {
+                  comments: false,
+                },
+              },
+              extractComments: false,
+            }),
+          ],
+        },
+
+  // to mimic GitHub Pages serving 404.html for all paths
+  // and test spa-github-pages redirect in dev
   devServer: {
-    historyApiFallback: true,
-    headers: {
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-    "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+    historyApiFallback: {
+      rewrites: [{ from: /\/cryptonewsx\/[^?]/, to: '/404.html' }]
     },
   },
-  plugins: [
-   new HtmlWebpackPlugin({
-      hash: true,
-      title: 'Development',
-     'process.env.NODE_URL': JSON.stringify(process.env.BASE_URL),
-      template: './public/index.html'
-   }),
-   new CopyWebpackPlugin({
-     patterns: [
-       { from: "public/manifest.json", to: "manifest.json" },
-         { from: "public/favicon.ico", to: "favicon.ico" }
-     ],
-   }),
-  ]
 };
-

@@ -16,7 +16,7 @@ import { createBrowserHistory } from 'history'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <Router basename='/cryptonewsx/'>
       <Provider store = {store}>    
       <App />
       </Provider>
