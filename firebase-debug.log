@@ -1,0 +1,103 @@
+[debug] [2022-03-02T12:11:32.475Z] ----------------------------------------------------------------------
+[debug] [2022-03-02T12:11:32.477Z] Command:       /usr/local/bin/firebase /Users/aaronmurphy/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2022-03-02T12:11:32.477Z] CLI Version:   9.22.0
+[debug] [2022-03-02T12:11:32.477Z] Platform:      darwin
+[debug] [2022-03-02T12:11:32.477Z] Node Version:  v12.18.1
+[debug] [2022-03-02T12:11:32.482Z] Time:          Wed Mar 02 2022 12:11:32 GMT+0000 (Greenwich Mean Time)
+[debug] [2022-03-02T12:11:32.482Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-03-02T12:11:32.526Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-03-02T12:11:32.526Z] > authorizing via signed-in user (aaronskins@gmail.com)
+[debug] [2022-03-02T12:11:32.526Z] [iam] checking project final-year-project-f2fb9 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2022-03-02T12:11:32.529Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/final-year-project-f2fb9:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]}
+[debug] [2022-03-02T12:11:32.824Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 02 Mar 2022 12:11:33 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=128","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-03-02T12:11:32.826Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/final-year-project-f2fb9/serviceAccounts/final-year-project-f2fb9@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2022-03-02T12:11:33.087Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 02 Mar 2022 12:11:34 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-03-02T12:11:33.090Z] > refreshing access token with scopes: []
+[debug] [2022-03-02T12:11:33.091Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-03-02T12:11:33.230Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Wed, 02 Mar 2022 12:11:34 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-03-02T12:11:33.281Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/final-year-project-f2fb9 [none]
+[debug] [2022-03-02T12:11:33.558Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/final-year-project-f2fb9 200
+[debug] [2022-03-02T12:11:33.559Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/final-year-project-f2fb9 {"projectId":"final-year-project-f2fb9","projectNumber":"1035660284773","displayName":"Final Year Project","name":"projects/final-year-project-f2fb9","resources":{"hostingSite":"final-year-project-f2fb9","realtimeDatabaseInstance":"final-year-project-f2fb9-default-rtdb","storageBucket":"final-year-project-f2fb9.appspot.com","locationId":"us-central"},"state":"ACTIVE"}
+[debug] [2022-03-02T12:11:33.559Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/final-year-project-f2fb9 [none]
+[debug] [2022-03-02T12:11:33.852Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/final-year-project-f2fb9 200
+[debug] [2022-03-02T12:11:33.852Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/final-year-project-f2fb9 {"projectId":"final-year-project-f2fb9","projectNumber":"1035660284773","displayName":"Final Year Project","name":"projects/final-year-project-f2fb9","resources":{"hostingSite":"final-year-project-f2fb9","realtimeDatabaseInstance":"final-year-project-f2fb9-default-rtdb","storageBucket":"final-year-project-f2fb9.appspot.com","locationId":"us-central"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'final-year-project-f2fb9'...
+[info] 
+[info] i  deploying database, functions, hosting 
+[info] i  database: checking rules syntax... 
+[debug] [2022-03-02T12:11:33.856Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-03-02T12:11:33.856Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-03-02T12:11:33.971Z] <<< HTTP RESPONSE 200 {"date":"Wed, 02 Mar 2022 12:11:35 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-03-02T12:11:34.018Z] >>> HTTP REQUEST GET https://firebasedatabase.googleapis.com/v1beta/projects/final-year-project-f2fb9/locations/-/instances/final-year-project-f2fb9-default-rtdb  
+ 
+[debug] [2022-03-02T12:11:34.495Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 02 Mar 2022 12:11:35 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-03-02T12:11:34.499Z] >>> HTTP REQUEST PUT https://final-year-project-f2fb9-default-rtdb.europe-west1.firebasedatabase.app/.settings/rules.json?dryRun=true  
+ {
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    ".read": false,
+    ".write": false
+  }
+}
+[debug] [2022-03-02T12:11:34.713Z] <<< HTTP RESPONSE 200 {"server":"nginx","date":"Wed, 02 Mar 2022 12:11:35 GMT","content-type":"application/json; charset=utf-8","content-length":"15","connection":"keep-alive","access-control-allow-origin":"*","cache-control":"no-cache","strict-transport-security":"max-age=31556926; includeSubDomains; preload"}
+[info] ✔  database: rules syntax for database final-year-project-f2fb9-default-rtdb is valid 
+[debug] [2022-03-02T12:11:34.720Z] Validating nodejs source
+[debug] [2022-03-02T12:11:36.550Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "14"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^9.8.0",
+    "firebase-functions": "^3.14.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-03-02T12:11:36.550Z] Building nodejs source
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2022-03-02T12:11:36.551Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/final-year-project-f2fb9/services/cloudfunctions.googleapis.com  
+ 
+[debug] [2022-03-02T12:11:36.552Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/final-year-project-f2fb9/services/runtimeconfig.googleapis.com  
+ 
+[debug] [2022-03-02T12:11:36.552Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/final-year-project-f2fb9/services/cloudbuild.googleapis.com  
+ 
+[debug] [2022-03-02T12:11:37.024Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 02 Mar 2022 12:11:38 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-03-02T12:11:37.784Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 02 Mar 2022 12:11:38 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2022-03-02T12:11:37.806Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 02 Mar 2022 12:11:38 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2022-03-02T12:11:37.807Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/final-year-project-f2fb9/adminSdkConfig  
+ 
+[debug] [2022-03-02T12:11:38.066Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 02 Mar 2022 12:11:39 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-03-02T12:11:38.066Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/final-year-project-f2fb9/configs  
+ 
+[debug] [2022-03-02T12:11:38.841Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 02 Mar 2022 12:11:39 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-03-02T12:11:39.010Z] Analyzing nodejs backend spec
+[debug] [2022-03-02T12:11:39.236Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/final-year-project-f2fb9/locations/-/functions  
+ 
+[debug] [2022-03-02T12:11:39.802Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 02 Mar 2022 12:11:40 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-03-02T12:11:39.807Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/final-year-project-f2fb9/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-03-02T12:12:59.533Z] Error: connect ETIMEDOUT 74.125.193.95:443
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1141:16)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 74.125.193.95:443
